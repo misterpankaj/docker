@@ -7,10 +7,18 @@ COPY package.json .
 RUN npm install
 
 COPY . .
-# 3000 is dafault port
-ENV PORT  3000 
-EXPOSE $PORT
 
-VOLUME [ "/app/perm" ]
+#EXPOSE 3000
+#ENV PORT 3000
+#EXPOSE $port
+
+ARG DEFAULT_PORT=3000
+ENV PORT ${DEFAULT_PORT}
+EXPOSE $port
+
+
+#VOLUME [ "/app/perm" ]
 
 CMD ["npm" ,"start"]
+
+

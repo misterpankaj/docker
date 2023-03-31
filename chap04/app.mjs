@@ -32,11 +32,11 @@ app.get('/api/data', (req, res) => {
     console.log(`Invalid variable name: ${variableName}`);
   }
 
-  res.send('Response data 88');
+  res.send('Response data 100');
 });
 
 // app.listen(3000, () => {
 //   console.log('Server listening on port 3000');
-// });
+//  });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT)

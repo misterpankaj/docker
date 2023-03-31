@@ -19,12 +19,12 @@ app.get('/api/data', (req, res) => {
 
 
   if (keyvalue === 'test') {
-    fs.writeFile(`${folder1}/${fileName}`, 'test'+file, (err) => {
+    fs.writeFile(`${folder1}/${fileName}`, 'I saved in test folder and file: file name :: '+fileName, (err) => {
       if (err) throw err;
       console.log(`${folder1}/${fileName} has been created in ${folder1}`);
     });
   } else if (keyvalue === 'perm') {
-    fs.writeFile(`${folder2}/${fileName}`, 'perm'+file, (err) => {
+    fs.writeFile(`${folder2}/${fileName}`, 'I saved in perm folder and file: file name :: '+fileName, (err) => {
       if (err) throw err;
       console.log(`${folder2}/${fileName} has been created in 1111${folder2}`);
     });
