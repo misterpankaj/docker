@@ -1,0 +1,11 @@
+Can Container ?
+		1. fetch data from public url
+		2. Connect to Running database in local machine 
+		3. Connect to Running database in different container
+
+------
+docker network create myapp-network
+docker run -d --rm --name mongo --network myapp-network mongo
+
+docker build -t myimage .
+docker run -p 3000:3000 --name myapp -v myvolume:/app/perm -v /app/node_modules -v "C:\Users\miste\OneDrive\Documents\docker\chap04:/app" --network myapp-network myimag
