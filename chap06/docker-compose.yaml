@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  mongo:
+    image: mongo
+    container_name: 'mongo'
+    # networks:
+    #   - myapp-network
+    volumes:
+      - data:/data/db
+    # environment:
+    #   - name=value
+    # env_file:
+    #   - ./env 
+  application:
+    # image: 'myimage'
+    # build: 
+    #   context: ./
+    #   dockerfile: Dockerfile
+    #   # args:
+    #       someargs: 22
+    build: ./
+    container_name: 'myapp'
+    ports:
+      - '3000:7000'
+    volumes:
+      - myvolume:/app/perm
+      - ./:/app
+      - /app/node_modules
+    env_file:
+      - ./.env
+    depends_on:
+      - mongo
+volumes:
+  data:
+  myvolume:
+

@@ -1,17 +1,18 @@
-Can Container ?
-		1. fetch data from public url
-		2. Connect to Running database in local machine 
-		3. Connect to Running database in different container
+-----------
+1.  docker network create myapp-network
 
-------------
-docker run -d --rm --name mongo --network myapp-network -v data:/data/db mongo
+2. docker run -d --rm --name mongo --network myapp-network -v data:/data/db mongo
 
-docker network create myapp-network
+
 
 docker build -t myimage .
 docker run -p 3000:7000 --name myapp -v myvolume:/app/perm -v /app/node_modules -v "C:\Users\miste\OneDrive\Documents\docker\chap06:/app" --env-file ./.env --network myapp-network myimage
 
 docker stop mongo myapp
+
+
+
+
 -------------
 Point to remember -
 		 1. You can use Docker compose for one or more appliction/Container.
